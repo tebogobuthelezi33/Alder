@@ -1,0 +1,48 @@
+{
+  "hero": {
+    "kicker": "Hudson Valley, New York",
+    "headline": "Solid wood.<br>Built to outlast the house it sits in.",
+    "body": "Alder & Ash is a two-person workshop for custom furniture and old-piece restoration. We mill, join and finish everything by hand, and we tell you the truth about what your grandmother's dresser is actually worth saving.",
+    "cta1": "Start a commission",
+    "cta2": "See the work"
+  },
+  "services": [
+    {
+      "title": "Custom Furniture",
+      "body": "Tables, cabinets and built-ins made to the inch for your space, not the showroom floor. We draw it, mill it, and deliver it ready to live with."
+    },
+    {
+      "title": "Restoration & Repair",
+      "body": "Wobbly chairs, sun-bleached tabletops, drawers that stopped sliding a decade ago. We rebuild the joints and refinish the surface so the piece holds for another fifty years."
+    },
+    {
+      "title": "Wood & Material Sourcing",
+      "body": "Reclaimed barnwood, air-dried walnut, hardwoods bought direct from small mills. We source what a project actually needs instead of whatever's on the shelf."
+    }
+  ],
+  "process": [
+    {
+      "title": "Walk the piece or space",
+      "body": "We come to you, take measurements or look over the piece, and talk through what it needs to hold up."
+    },
+    {
+      "title": "Build in the shop",
+      "body": "Milling, joinery and finishing happen on our bench, with photos along the way so you're not guessing."
+    },
+    {
+      "title": "Deliver and set up",
+      "body": "We deliver, place it, and walk you through care — oil, wax, or whatever the wood actually needs."
+    }
+  ],
+  "contact": {
+    "heading": "Start a commission",
+    "body": "Every piece starts with a conversation about the wood, the space, and the budget. Send us a few details and we'll follow up within a couple of days.",
+    "email": "hello@alderandash.example",
+    "phoneDisplay": "+1 845 555 0142",
+    "phoneRaw": "+18455550142",
+    "location": "Hudson Valley, New York"
+  },
+  "footer": {
+    "text": "Alder & Ash — Hudson Valley, New York"
+  }
+}

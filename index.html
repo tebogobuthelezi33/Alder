@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alder &amp; Ash — Custom Furniture &amp; Restoration</title>
+<meta name="description" content="Alder & Ash is a two-person woodworking workshop in the Hudson Valley building custom furniture and restoring old pieces by hand.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --linen:#EFE7D8;
+    --ivory:#FAF6EE;
+    --walnut:#3B2A1E;
+    --charcoal:#2A2420;
+    --oak:#C9A66B;
+    --rust:#A65A34;
+    --line:#DCD0B8;
+    --max:1120px;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--linen);
+    color:var(--charcoal);
+    font-family:"Work Sans", sans-serif;
+    font-size:16px;
+    line-height:1.6;
+  }
+  h1,h2,h3,h4{
+    font-family:"Fraunces", serif;
+    color:var(--walnut);
+    margin:0;
+    font-weight:500;
+  }
+  a{ color:inherit; }
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 28px; }
+  img{ max-width:100%; }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky; top:0; z-index:20;
+    background:rgba(239,231,216,.9);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--max); margin:0 auto; padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between; gap:20px;
+  }
+  .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .brand svg{ width:30px; height:30px; }
+  .brand span{
+    font-family:"Fraunces", serif; font-size:16px; letter-spacing:.06em;
+    color:var(--walnut);
+  }
+  nav ul{ list-style:none; display:flex; align-items:center; gap:26px; margin:0; padding:0; }
+  nav a{
+    text-decoration:none; color:var(--charcoal); font-size:14.5px;
+    padding-bottom:2px; border-bottom:1px solid transparent;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  nav a:hover{ border-color:var(--rust); color:var(--rust); }
+  .nav-cta a{
+    background:var(--rust); color:var(--ivory); padding:9px 18px;
+    border-radius:3px; border-bottom:none;
+  }
+  .nav-cta a:hover{ background:#8f4b2a; color:var(--ivory); }
+  @media (max-width:720px){
+    nav ul{ gap:14px; }
+    nav li:not(.nav-cta){ display:none; }
+  }
+
+  /* ---------- hero ---------- */
+  #hero{ padding:76px 0 88px; overflow:hidden; }
+  .hero-grid{
+    display:grid; grid-template-columns:1.05fr .95fr; gap:48px; align-items:center;
+  }
+  @media (max-width:860px){ .hero-grid{ grid-template-columns:1fr; } }
+  .kicker{
+    font-size:14.5px; color:var(--rust); margin:0 0 14px;
+    font-weight:600;
+  }
+  h1.headline{ font-size:clamp(34px,5vw,52px); line-height:1.08; margin-bottom:20px; }
+  .hero-copy p.body{ font-size:17px; max-width:46ch; color:#4a4038; margin-bottom:30px; }
+  .hero-actions{ display:flex; gap:14px; flex-wrap:wrap; }
+  .btn{
+    display:inline-block; padding:12px 22px; border-radius:3px;
+    background:var(--rust); color:var(--ivory); text-decoration:none;
+    font-size:15px; font-weight:500;
+    transition:transform .15s ease, background .15s ease;
+  }
+  .btn:hover{ background:#8f4b2a; transform:translateY(-1px); }
+  .btn-ghost{
+    background:transparent; color:var(--walnut); border:1px solid var(--walnut);
+  }
+  .btn-ghost:hover{ background:var(--walnut); color:var(--ivory); }
+
+  .rings-wrap{ display:flex; justify-content:center; }
+  .rings{ width:100%; max-width:380px; }
+  .rings path, .rings circle{
+    fill:none; stroke:var(--walnut); stroke-width:1.4;
+    stroke-dasharray:1400; stroke-dashoffset:1400;
+    animation:draw 2.6s ease forwards;
+  }
+  .rings .knot{ stroke:var(--rust); }
+  @media (prefers-reduced-motion: reduce){
+    .rings path, .rings circle{ animation:none; stroke-dashoffset:0; }
+  }
+  @keyframes draw{ to{ stroke-dashoffset:0; } }
+
+  /* ---------- section shell ---------- */
+  section{ padding:86px 0; }
+  .section-head{ max-width:640px; margin-bottom:52px; }
+  .section-head .eyebrow{ color:var(--rust); font-size:14.5px; font-weight:600; margin-bottom:10px; }
+  .section-head h2{ font-size:clamp(26px,3.4vw,36px); margin-bottom:12px; }
+  .section-head p{ color:#4a4038; font-size:16px; }
+
+  /* ---------- services ---------- */
+  #services{ background:var(--ivory); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .services-list{ display:flex; flex-direction:column; }
+  .service-row{
+    display:grid; grid-template-columns:260px 1fr; gap:32px;
+    padding:30px 0; border-top:1px solid var(--line);
+  }
+  .service-row:last-child{ border-bottom:1px solid var(--line); }
+  @media (max-width:720px){ .service-row{ grid-template-columns:1fr; gap:10px; } }
+  .service-row .icon{ width:34px; height:34px; color:var(--rust); margin-bottom:10px; }
+  .service-row h3{ font-size:20px; }
+  .service-body p{ color:#4a4038; max-width:58ch; margin:0; }
+
+  /* ---------- process ---------- */
+  .process-list{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:36px;
+  }
+  @media (max-width:780px){ .process-list{ grid-template-columns:1fr; } }
+  .process-item{ border-top:2px solid var(--oak); padding-top:18px; }
+  .process-item .num{
+    font-family:"Fraunces", serif; font-size:15px; color:var(--rust);
+    margin-bottom:10px;
+  }
+  .process-item h4{ font-size:18px; margin-bottom:8px; }
+  .process-item p{ color:#4a4038; margin:0; font-size:15px; }
+
+  /* ---------- contact ---------- */
+  #contact{ background:var(--ivory); border-top:1px solid var(--line); }
+  .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; }
+  @media (max-width:820px){ .contact-grid{ grid-template-columns:1fr; } }
+  #contact h2{ font-size:clamp(26px,3.4vw,34px); margin-bottom:14px; }
+  #contact .lede{ color:#4a4038; max-width:48ch; margin-bottom:26px; }
+  .eyebrow{ color:var(--rust); font-size:14.5px; font-weight:600; margin-bottom:10px; }
+
+  .contact-card{
+    background:var(--linen); border:1px solid var(--line); border-radius:4px; padding:26px;
+    display:flex; flex-direction:column; gap:18px;
+  }
+  .contact-card .row{ display:flex; align-items:center; justify-content:space-between; gap:14px; }
+  .contact-card .label{ display:block; font-size:13px; color:#8a7c67; margin-bottom:4px; }
+  .contact-card .value{ text-decoration:none; color:var(--walnut); font-size:16px; font-weight:500; }
+  .contact-card .value:hover{ color:var(--rust); }
+  .icon-btn{
+    width:38px; height:38px; border-radius:50%; border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; color:#8a7c67;
+    text-decoration:none; flex-shrink:0;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  .icon-btn:hover{ border-color:var(--rust); color:var(--rust); }
+  .icon-btn svg{ width:18px; height:18px; }
+
+  /* ---------- footer ---------- */
+  footer{
+    padding:34px 0; display:flex; align-items:center; justify-content:space-between;
+    flex-wrap:wrap; gap:14px; border-top:1px solid var(--line);
+  }
+  footer .brand span{ font-size:13px; }
+  footer .meta{ color:#8a7c67; font-size:13px; }
+
+  :focus-visible{ outline:2px solid var(--rust); outline-offset:2px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a class="brand" href="#hero">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="17" stroke="currentColor" stroke-width="1.4" style="color:#3B2A1E"/>
+        <circle cx="20" cy="20" r="11" stroke="currentColor" stroke-width="1.2" style="color:#3B2A1E"/>
+        <circle cx="20" cy="20" r="4" stroke="currentColor" stroke-width="1.2" style="color:#A65A34"/>
+      </svg>
+      <span>ALDER &amp; ASH</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="nav-cta"><a href="#contact">Start a commission</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section id="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="kicker" id="cms-hero-kicker">Hudson Valley, New York</p>
+        <h1 class="headline" id="cms-hero-headline">Solid wood.<br>Built to outlast the house it sits in.</h1>
+        <p class="body" id="cms-hero-body">Alder &amp; Ash is a two-person workshop for custom furniture and old-piece restoration. We mill, join and finish everything by hand, and we tell you the truth about what your grandmother's dresser is actually worth saving.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#contact" id="cms-hero-cta1">Start a commission</a>
+          <a class="btn btn-ghost" href="#services" id="cms-hero-cta2">See the work</a>
+        </div>
+      </div>
+      <div class="rings-wrap">
+        <svg class="rings" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <path d="M150 12 C 230 12 288 70 288 150 C 288 230 230 288 150 288 C 70 288 12 230 12 150 C 12 70 70 12 150 12 Z"/>
+          <path d="M150 46 C 210 46 254 90 254 150 C 254 210 210 254 150 254 C 90 254 46 210 46 150 C 46 90 90 46 150 46 Z"/>
+          <path d="M150 80 C 190 80 220 110 220 150 C 220 190 190 220 150 220 C 110 220 80 190 80 150 C 80 110 110 80 150 80 Z"/>
+          <path d="M150 112 C 170 112 188 130 188 150 C 188 170 170 188 150 188 C 130 188 112 170 112 150 C 112 130 130 112 150 112 Z"/>
+          <circle class="knot" cx="150" cy="150" r="14"/>
+          <path d="M40 40 L95 92" stroke-width="1"/>
+          <path d="M260 250 L215 210" stroke-width="1"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">What we build</div>
+        <h2>Three ways into the shop.</h2>
+        <p>Every piece is drawn, milled and finished by the same two hands that pick up the phone.</p>
+      </div>
+
+      <div class="services-list">
+        <div class="service-row">
+          <div>
+            <svg class="icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 32L28 10l6 6L12 38z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M22 16l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <h3 id="cms-service-1-title">Custom Furniture</h3>
+          </div>
+          <div class="service-body">
+            <p id="cms-service-1-body">Tables, cabinets and built-ins made to the inch for your space, not the showroom floor. We draw it, mill it, and deliver it ready to live with.</p>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div>
+            <svg class="icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 10h24v24H10z" stroke="currentColor" stroke-width="2"/>
+              <path d="M10 22h24M22 10v24" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <h3 id="cms-service-2-title">Restoration &amp; Repair</h3>
+          </div>
+          <div class="service-body">
+            <p id="cms-service-2-body">Wobbly chairs, sun-bleached tabletops, drawers that stopped sliding a decade ago. We rebuild the joints and refinish the surface so the piece holds for another fifty years.</p>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div>
+            <svg class="icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 34l8-24h12l8 24" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M14 26h16" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <h3 id="cms-service-3-title">Wood &amp; Material Sourcing</h3>
+          </div>
+          <div class="service-body">
+            <p id="cms-service-3-body">Reclaimed barnwood, air-dried walnut, hardwoods bought direct from small mills. We source what a project actually needs instead of whatever's on the shelf.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">How a piece gets made</div>
+        <h2>Three steps, start to delivery.</h2>
+      </div>
+      <div class="process-list">
+        <div class="process-item">
+          <div class="num">01</div>
+          <h4 id="cms-process-1-title">Walk the piece or space</h4>
+          <p id="cms-process-1-body">We come to you, take measurements or look over the piece, and talk through what it needs to hold up.</p>
+        </div>
+        <div class="process-item">
+          <div class="num">02</div>
+          <h4 id="cms-process-2-title">Build in the shop</h4>
+          <p id="cms-process-2-body">Milling, joinery and finishing happen on our bench, with photos along the way so you're not guessing.</p>
+        </div>
+        <div class="process-item">
+          <div class="num">03</div>
+          <h4 id="cms-process-3-title">Deliver and set up</h4>
+          <p id="cms-process-3-body">We deliver, place it, and walk you through care — oil, wax, or whatever the wood actually needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <div class="eyebrow">Get in touch</div>
+        <h2 id="cms-contact-heading">Start a commission</h2>
+        <p class="lede" id="cms-contact-body">Every piece starts with a conversation about the wood, the space, and the budget. Send us a few details and we'll follow up within a couple of days.</p>
+        <a class="btn" href="mailto:hello@alderandash.example" id="cms-contact-cta">Email us</a>
+      </div>
+      <div class="contact-card">
+        <div class="row">
+          <div>
+            <span class="label">Email</span>
+            <a class="value" href="mailto:hello@alderandash.example" id="cms-contact-email">hello@alderandash.example</a>
+          </div>
+          <a class="icon-btn" href="mailto:hello@alderandash.example" aria-label="Email Alder & Ash" id="cms-contact-mail-btn">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="row">
+          <div>
+            <span class="label">Phone</span>
+            <a class="value" href="tel:+18455550142" id="cms-contact-phone">+1 845 555 0142</a>
+          </div>
+          <a class="icon-btn" href="https://wa.me/18455550142" target="_blank" rel="noopener" aria-label="Message on WhatsApp" id="cms-contact-wa-btn">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3a9 9 0 0 0-7.75 13.5L3 21l4.6-1.23A9 9 0 1 0 12 3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+              <path d="M8.3 9.4c.2-.9 1-1.5 1.6-1.5.2 0 .4 0 .6.1.2.1.4.6.6 1.1.2.4.4.9.4 1.1 0 .3-.2.5-.4.7l-.4.4c-.1.1-.2.3-.1.5.3.7.9 1.4 1.5 1.9.6.5 1.3.9 2 1.1.2.1.3 0 .5-.1l.5-.6c.2-.2.4-.3.7-.2l1.9.9c.2.1.4.3.4.6 0 .8-.5 1.6-1.2 2-.7.4-1.5.5-2.4.3-1.7-.4-3.3-1.4-4.5-2.7-1.2-1.2-2-2.6-2.3-3.9-.2-.7-.1-1.4.2-2z" fill="currentColor"/>
+            </svg>
+          </a>
+        </div>
+        <div class="row">
+          <div>
+            <span class="label">Location</span>
+            <span class="value" id="cms-contact-location">Hudson Valley, New York</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; width:100%; flex-wrap:wrap; gap:14px;">
+    <a class="brand" href="#hero">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+        <circle cx="20" cy="20" r="17" stroke="currentColor" stroke-width="1.4" style="color:#3B2A1E"/>
+        <circle cx="20" cy="20" r="9" stroke="currentColor" stroke-width="1.2" style="color:#3B2A1E"/>
+      </svg>
+      <span>ALDER &amp; ASH</span>
+    </a>
+    <span class="meta" id="footer-line">Alder &amp; Ash — Hudson Valley, New York</span>
+  </div>
+</footer>
+
+<script>
+// ---------- loads editable copy from content.json so the CMS can update
+// this page without anyone touching the HTML/CSS/JS above ----------
+(function(){
+  fetch('content.json', { cache: 'no-store' })
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(c){
+      if(!c) return;
+
+      function setText(id, val){
+        var el = document.getElementById(id);
+        if(el && val != null) el.textContent = val;
+      }
+      function setHTML(id, val){
+        var el = document.getElementById(id);
+        if(el && val != null) el.innerHTML = val;
+      }
+
+      if(c.hero){
+        setText('cms-hero-kicker', c.hero.kicker);
+        setHTML('cms-hero-headline', c.hero.headline);
+        setText('cms-hero-body', c.hero.body);
+        setText('cms-hero-cta1', c.hero.cta1);
+        setText('cms-hero-cta2', c.hero.cta2);
+      }
+
+      (c.services || []).forEach(function(s, i){
+        setText('cms-service-' + (i+1) + '-title', s.title);
+        setText('cms-service-' + (i+1) + '-body', s.body);
+      });
+
+      (c.process || []).forEach(function(s, i){
+        setText('cms-process-' + (i+1) + '-title', s.title);
+        setText('cms-process-' + (i+1) + '-body', s.body);
+      });
+
+      if(c.contact){
+        setText('cms-contact-heading', c.contact.heading);
+        setText('cms-contact-body', c.contact.body);
+
+        if(c.contact.email){
+          setText('cms-contact-email', c.contact.email);
+          ['cms-contact-cta','cms-contact-email','cms-contact-mail-btn'].forEach(function(id){
+            var el = document.getElementById(id);
+            if(el) el.href = 'mailto:' + c.contact.email;
+          });
+        }
+        if(c.contact.phoneDisplay){ setText('cms-contact-phone', c.contact.phoneDisplay); }
+        if(c.contact.phoneRaw){
+          var digits = c.contact.phoneRaw.replace(/[^\d]/g, '');
+          var phoneEl = document.getElementById('cms-contact-phone');
+          if(phoneEl) phoneEl.href = 'tel:' + c.contact.phoneRaw;
+          var waEl = document.getElementById('cms-contact-wa-btn');
+          if(waEl) waEl.href = 'https://wa.me/' + digits;
+        }
+        setText('cms-contact-location', c.contact.location);
+      }
+
+      if(c.footer){ setText('footer-line', c.footer.text); }
+    })
+    .catch(function(){ /* content.json missing — page shows its built-in defaults */ });
+})();
+</script>
+
+</body>
+</html>
