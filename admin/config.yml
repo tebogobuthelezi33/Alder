@@ -1,1 +1,55 @@
+backend:
+  name: git-gateway
+  branch: main
 
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "site"
+    label: "Website Content"
+    files:
+      - name: "content"
+        label: "Page Text"
+        file: "content.json"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Kicker (small line above headline)", name: "kicker", widget: "string" }
+              - { label: "Headline (use <br> for a line break)", name: "headline", widget: "string" }
+              - { label: "Subheading", name: "body", widget: "text" }
+              - { label: "Button 1 text", name: "cta1", widget: "string" }
+              - { label: "Button 2 text", name: "cta2", widget: "string" }
+
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "body", widget: "text" }
+
+          - label: "Process Steps"
+            name: "process"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "body", widget: "text" }
+
+          - label: "Contact Section"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Body text", name: "body", widget: "text" }
+              - { label: "Email address", name: "email", widget: "string" }
+              - { label: "Phone (display format, e.g. +27 76 014 4053)", name: "phoneDisplay", widget: "string" }
+              - { label: "Phone (raw digits with +, e.g. +27760144053)", name: "phoneRaw", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Footer text", name: "text", widget: "string" }
