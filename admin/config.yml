@@ -37,6 +37,14 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "body", widget: "text" }
 
+          - label: "Portfolio"
+            name: "portfolio"
+            widget: "list"
+            fields:
+              - { label: "Photo", name: "image", widget: "image", required: false }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
           - label: "Contact Section"
             name: "contact"
             widget: "object"
