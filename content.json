@@ -44,5 +44,22 @@
   },
   "footer": {
     "text": "Alder & Ash — Hudson Valley, New York"
-  }
+  },
+  "portfolio": [
+    {
+      "image": "/images/310874.jpg",
+      "title": "Solid walnut table",
+      "description": "Solid walnut table"
+    },
+    {
+      "image": "/images/310876.jpg",
+      "title": "Custom wall made bookcase",
+      "description": "Custom wall made bookcase"
+    },
+    {
+      "image": "/images/310877.jpg",
+      "title": "Custom Walnut Wood Bookshelf with Metal Frame | ",
+      "description": "Custom Walnut Wood Bookshelf with Metal Frame | "
+    }
+  ]
 }
